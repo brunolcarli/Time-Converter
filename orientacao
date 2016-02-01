@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação de Tela</title>
+        <meta name="viewport" content="width = device-width; initial-scale=1.0; maximun-scale=1.0; user-scalable=0;" />
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="orientacao.js"></script>
+    </head>
+    <body>
+        <h1>Orientação da Tela</h1>
+        <ul id="detalhes">
+            <li>Tipo: <span id="tipo"></span></li>
+            <li>Largura: <span id="largura"></span></li>
+            <li>Altura: <span id="altura"></span></li>
+            <li>Orientação: <span id="orientacao"></span></li>
+            <li>Orientação detectada: <span id="orientacao-detectada"></span></li>
+            <li>Classe de rotação: <span id="rotacao"></span></li>
+        </ul>
+    </body>
+</html>
