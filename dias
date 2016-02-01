@@ -1,0 +1,222 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<style type="text/css">
+		
+			#body{
+				background-image:url(amp.gif);
+				background-repeat:no-repeat;
+				}
+			#form{
+				font-weight:bolder;
+				color: #6959CD;
+			}
+			#form2{
+				font-weight:bolder;
+				text-shadow: 5px 6px 2px #93968f;, -3px 4px 5px #58d1e3;
+				color: red;
+			}
+			#form3{
+				font-weight:bolder;
+				text-shadow: 5px 6px 2px #93968f;, -3px 4px 5px #58d1e3;
+				color: purple;
+			}
+			
+			
+			span.decision {
+			font-weight: bold;
+			border: thin solid #000000;
+			padding: 5px;
+			background-color: #DDDDDD;
+			cursor:pointer;
+			}
+			
+			span.decisionhover {
+			font-weight: bold;
+			border: thin solid #000000;
+			padding: 5px;
+			background-color: #EEEEEE;
+			cursor:pointer;
+			}
+			
+
+		</style>
+		
+		<script type="text/javascript">
+		
+			var ALTURA, LARGURA = 0;
+			var message = "";
+			var message2 = "";
+			var message3 = "";
+			
+			function diasSemanas(){
+				
+				var dias = form.diasSemanas.value;
+				var semanas = dias / 7;
+					if (semanas < 1){
+						message="menos de uma semana";
+						semanas = "menos de uma semana";
+						alert(dias + " dias equivale a " + semanas);
+					}
+
+					else if (semanas >= 1){
+						alert(dias + " dias equivale a " + parseInt(semanas) + " semanas!");
+						message = (dias + " dias equivale a " + parseInt(semanas) + " semanas!");
+						
+					}
+					else {
+					 alert("Você inseriu um digito inválido");
+					 message = "digito inválido";
+					}
+				
+				
+				
+				//Atualiza o texto de descrição da cena
+				document.getElementById("screenText").innerHTML = message;
+			}
+			
+			function diasMeses(){
+				
+				var dias = form2.diasMeses.value;
+				var meses = dias / 30;
+					if (meses < 1){
+						message2="menos de um mês";
+						meses = "menos de um mês";
+						alert(dias + " dias equivale a " + meses);
+					}
+					else if (meses >= 1){
+						alert(dias + " dias equivale a " + parseInt(meses) + " meses!");
+						message2 = (dias + " dias equivale a " + parseInt(meses) + " meses!");
+						
+					}
+					else {
+					 alert("Você inseriu um digito inválido");
+					 message2 = "digito inválido";
+					}
+				
+				
+				
+				//Atualiza o texto de descrição da cena
+				document.getElementById("screenText2").innerHTML = message2;
+			}
+			
+			function diasAnos(){
+				
+				var dias = form3.diasAnos.value;
+				var anos = dias / 365;
+					if (anos < 1){
+						message3="menos de um ano";
+						anos = "menos de um ano";
+						alert(dias + " dias equivale a " + anos);
+					}
+					else if (anos >= 1){
+						alert(dias + " dias equivale a " + parseInt(anos) + " anos!");
+						message3 = (dias + " dias equivale a " + parseInt(anos) + " anos!");
+						
+					}
+					else {
+					 alert("Você inseriu um digito inválido");
+					 message3 = "digito inválido";
+					}
+				
+				
+				
+				//Atualiza o texto de descrição da cena
+				document.getElementById("screenText3").innerHTML = message3;
+			}
+
+			function voltar() {
+				location.href="index.html";
+			}
+			
+		function main(){
+			ALTURA = window.innerHeight;
+			LARGURA = window.innerWidth;
+			
+			if (LARGURA >= 500) {
+				LARGURA = 600;
+				ALTURA = 600;
+			}
+			
+
+
+		
+		}
+			
+			
+		
+		</script>
+	
+	</head>
+	<body id="body" onload="main()">
+		
+		<form id="form">
+			<h3> Dias para semanas </h3>
+			<label for="dias"> Insira uma quantidade de dias </label>
+				<input type ="number" id="diasSemanas" name="dias" size="7" placeholder="qtd de dias" value="0"/>
+			<label for="dias"> somente numeros </label>
+			
+			<br />
+			
+
+				<label for="result" id="screenText"> <strong> Resultado: </strong> </label>
+	
+			
+			<br />		
+			
+			
+		</form>
+		<div>
+			<span id="botao1" class="decision" onclick="diasSemanas();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Converter</span>
+		</div>
+		
+		<form id="form2">
+			<h3> Dias para meses </h3>
+			<label for="dias"> Insira uma quantidade de dias </label>
+				<input type ="number" id="diasMeses" name="dias" size="7" placeholder="qtd de dias" value="0"/>
+			<label for="dias"> somente numeros </label>
+			
+			<br />
+			
+
+				<label for="result" id="screenText2"> <strong> Resultado: </strong> </label>
+	
+			
+			<br />		
+			
+			
+		</form>
+		<div>
+			<span id="botao2" class="decision" onclick="diasMeses();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Converter</span>
+		</div>
+		
+		<form id="form3">
+			<h3> Dias para anos </h3>
+			<label for="dias"> Insira uma quantidade de dias </label>
+				<input type ="number" id="diasAnos" name="dias" size="7" placeholder="qtd de dias" value="0"/>
+			<label for="dias"> somente numeros </label>
+			
+			<br />
+			
+
+				<label for="result" id="screenText3"> <strong> Resultado: </strong> </label>
+	
+			
+		
+			
+			
+		</form>
+		<div>
+			<span id="botao3" class="decision" onclick="diasAnos();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Converter</span>
+		</div>
+		<br /> 
+		
+		<div>
+			<span id="botao4" class="decision" onclick="voltar();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Voltar</span>
+		</div>
+
+	</body>
+
+</html>
