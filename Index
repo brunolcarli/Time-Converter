@@ -1,0 +1,135 @@
+<html>
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<link media="only screen and (max-device-width: 480px)" href="small.css" type="text/css" rel="stylesheet" />
+		<link media="only screen and (min-device-width: 481px)" href="large.css" type="text/css" rel="stylesheet" />
+		<style type="text/css">
+		
+			#body{
+				background-image:url(relogio.gif);
+				background-repeat:no-repeat;
+			}
+			
+			#conv {
+				position: relative;
+				right: -170px;
+			}
+			
+			#titulo {
+				position: relative;
+				top: 64px;
+				right: -123px;
+				animation-name: colorchange;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+				animation-timing-function: ease-in;
+			}
+			
+			@keyframes colorchange {
+				from {color: silver;}
+				to {color: red;}
+			}
+			
+			#botoes {
+				position: relative;
+				top: 90px;
+				right: -200px;
+			}
+
+			span.decision {
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+			font-weight: bold;
+			border: thin solid #000000;
+			padding: 5px;
+			background-color: #DDDDDD;
+			cursor:pointer;
+			}
+			
+			span.decisionhover {
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+			font-weight: bold;
+			border: thin solid #000000;
+			padding: 5px;
+			background-color: #EEEEEE;
+			cursor:pointer;
+			}
+			
+
+			
+			
+
+		</style>
+	
+	
+		<script type="text/javascript">
+		
+		document.getElementById("body").style.height = (document.body.clientHeight - 100) * 0.9;
+			
+		function main(){
+			ALTURA = window.innerHeight;
+			LARGURA = window.innerWidth;
+			
+			if (LARGURA >= 500) {
+				LARGURA = 600;
+				ALTURA = 600;
+			}
+					
+		}
+			
+		
+			function horas() {
+				location.href="horas.html";
+			}
+		
+			function dias() {
+				location.href="dias.html";
+			}
+			
+			function semanas() {
+				location.href="semanas.html";
+			}
+			
+			function meses() {
+				location.href="meses.html";
+			}
+			
+			function anos() {
+				location.href="anos.html";
+			}
+			
+		</script>
+	</head>
+	
+	<body id="body" onload="main()"> 
+		<!-- TITULO -->
+		<h2 id="conv"> Conversor </h2>
+		<div id="titulo">
+			<h4> Escolha o que deseja converter: </h4>
+		</div>
+		
+		<!--DECISÕES-->
+		<div id="botoes">
+			<div>
+				<span id="horas" class="decision" onclick="horas()" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'"> &nbsp; Horas &nbsp;</span>
+			</div> 
+			<p>
+			<div>
+				<span id="dias" class="decision" onclick="dias();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">&nbsp; &nbsp; Dias &nbsp;&nbsp;</span>
+			</div>
+			<p>
+			<div>
+				<span id="semanas" class="decision" onclick="semanas();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Semanas</span>
+			</div>
+			<p>
+			<div>
+				<span id="meses" class="decision" onclick="meses();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">&nbsp; Meses &nbsp;</span>
+			</div>
+			<p>
+			<div>
+				<span id="anos" class="decision" onclick="anos();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">&nbsp; &nbsp;Anos &nbsp;&nbsp;</span>
+			</div>
+		</div>
+	</body>
+</html>
