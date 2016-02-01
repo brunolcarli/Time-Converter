@@ -1,0 +1,166 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<style type="text/css">
+		
+			#body{
+				background-image:url(relogio.gif);
+				background-repeat:no-repeat;
+			}
+			
+			span.decision {
+			font-weight: bold;
+			border: thin solid #000000;
+			padding: 5px;
+			background-color: #DDDDDD;
+			cursor:pointer;
+			}
+			
+			span.decisionhover {
+			font-weight: bold;
+			border: thin solid #000000;
+			padding: 5px;
+			background-color: #EEEEEE;
+			cursor:pointer;
+			}
+			
+
+		</style>
+		
+		<script type="text/javascript">
+		
+			var ALTURA, LARGURA = 0;
+			var message = "";
+			var message2 = "";
+			
+			function dias(){
+				
+				var hora = form.horasDias.value;
+				var dias = hora / 24;
+					if (dias < 1){
+						message="menos de um dia";
+						dias = "menos de um dia";
+						alert(hora + " horas equivale a " + dias);
+					}
+					else if (dias >= 1){
+						alert(hora + " horas equivale a " + parseInt(dias) + " dias!");
+						message = (hora + " horas equivale a " + parseInt(dias) + " dias!");
+						
+					}
+					else {
+					 alert("Você inseriu um digito inválido");
+					 message = "digito inválido";
+					}
+				
+				
+				
+				//Atualiza o texto de descrição da cena
+				document.getElementById("screenText").innerHTML = message;
+			}
+			
+						function voltar() {
+				location.href="index.html";
+			}
+
+			
+			function diasHoras(){
+				
+				var dias = form2.diasHoras.value;
+				var horas = dias * 24;
+					if (horas < 1){
+						message2="menos de uma hora";
+						horas = "menos de uma hora";
+						alert(dias + " dias equivale a " + horas );
+					}
+					else if (horas >= 1){
+						alert(dias + " dias equivale a " + parseInt(horas) + " horas!");
+						message2 = (dias + " dias equivale a " + parseInt(horas) + " horas!");
+						
+					}
+					else {
+					 alert("Você inseriu um digito inválido");
+					 message2 = "digito inválido";
+					}
+				
+				
+				
+				//Atualiza o texto de descrição da cena
+				document.getElementById("screenText2").innerHTML = message2;
+			}
+			
+			function voltar() {
+				location.href="index.html";
+			}
+			
+		function main(){
+			ALTURA = window.innerHeight;
+			LARGURA = window.innerWidth;
+			
+			if (LARGURA >= 500) {
+				LARGURA = 600;
+				ALTURA = 600;
+			}
+
+		}
+			
+			
+		
+		</script>
+	
+	</head>
+	<body id="body" onload="main()">
+		
+		<form id="form">
+			<h3> Horas para dias </h3>
+			<label for="horas"> Insira uma quantidade de horas </label>
+				<input type ="number" id="horasDias" name="horas" size="7" placeholder="qtd de horas" value="0"/>
+			<label for="horas"> somente numeros </label>
+			
+			<br />
+			
+
+				<label for="result" id="screenText"> <strong> Resultado: </strong> </label>
+	
+			
+			<br />		
+			
+			
+		</form>
+		<div>
+			<span id="botao1" class="decision" onclick="dias();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Converter</span>
+		</div>
+		
+		<br /> <br /> <br /> <br /> <br /> <br />
+		
+		<form id="form2">
+			<h3> Dias para horas </h3>
+			<label for="dias"> Insira uma quantidade de dias </label>
+				<input type ="number" id="diasHoras" name="dias" size="7" placeholder="qtd de dias" value="0"/>
+			<label for="dias"> somente numeros </label>
+			
+			<br />
+			
+
+				<label for="result" id="screenText2"> <strong> Resultado: </strong> </label>
+	
+			
+			<br />		
+			
+			
+		</form>
+		<div>
+			<span id="botao2" class="decision" onclick="diasHoras();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Converter</span>
+		</div>
+		
+		
+				<br /> <br />
+		
+		<div>
+			<span id="botao4" class="decision" onclick="voltar();" onmouseover="this.className = 'decisionhover'" onmouseout="this.className = 'decision'">Voltar</span>
+		</div>
+	
+	</body>
+
+</html>
